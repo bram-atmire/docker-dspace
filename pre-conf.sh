@@ -24,7 +24,7 @@
         rm dspace-5.3-src-release.tar.gz
     
         cd /build/dspace-5.3-src-release
-        mvn package -Dmirage2.on=true
+        mvn package -Dmirage2.on=true > /var/log/maven-build-output.log
         #work around for AUFS related bug. https://github.com/QuantumObject/docker-dspace/issues/2
         mkdir /etc/ssl/private-copy; mv /etc/ssl/private/* /etc/ssl/private-copy/; rm -r /etc/ssl/private; mv /etc/ssl/private-copy /etc/ssl/private; chmod -R 0700 /etc/ssl/private; chown -R postgres /etc/ssl/private
         
