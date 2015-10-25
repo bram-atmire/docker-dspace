@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y -q --force-yes python-software-properti
                                             ant \
                                             git \
                                             unzip \
+                                            sudo \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
