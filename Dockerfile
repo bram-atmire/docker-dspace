@@ -8,7 +8,6 @@ MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 RUN echo "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc)-backports main restricted " >> /etc/apt/sources.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
 RUN apt-get update
-RUN apt-get dist-upgrade
 RUN apt-get install -y -q --force-yes python-software-properties \
                                             software-properties-common \
                                             postgresql \
@@ -20,6 +19,7 @@ RUN apt-get install -y -q --force-yes python-software-properties \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
+RUN apt-get dist-upgrade
 
 ##Adding Deamons to containers
 # to add postgresqld deamon to runit
