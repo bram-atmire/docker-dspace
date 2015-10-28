@@ -56,8 +56,7 @@
         cd /build/dspace-5.3-src-release/dspace/target/dspace-installer
         ant fresh_install
         chown tomcat8:tomcat8 /dspace -R
-        killall postgres
-        sleep 10s
+        sleep 5s
 
   apt-get clean
   rm -rf /build
